@@ -66,8 +66,8 @@
      PARTÍCULAS (canvas leve, pausado fora da tela)
      ========================================================= */
   var paletas = {
-    ouro: ["255, 240, 205", "246, 220, 165", "236, 204, 140"],
-    brasa: ["255, 190, 120", "250, 150, 80", "255, 214, 160"]
+    ouro: ["245, 240, 231", "230, 210, 166", "216, 188, 130"],
+    brasa: ["230, 210, 166", "216, 188, 130", "214, 170, 120"]
   };
   function sprite(rgb) {
     var c = document.createElement("canvas"); c.width = c.height = 64;
@@ -156,7 +156,7 @@
     var ctx = canvas.getContext("2d");
     var dpr = Math.min(window.devicePixelRatio || 1, 2);
     var w = 0, h = 0, estrelas = [], grandes = [], poeira = [], raf = 0, rodando = false, anterior = 0;
-    var spriteOuro = sprite("246, 220, 165"), spriteBranco = sprite("255, 246, 226");
+    var spriteOuro = sprite("216, 188, 130"), spriteBranco = sprite("245, 240, 231");
     var px = 0, py = 0, alvoX = 0, alvoY = 0;
 
     function livre(x, y) { // evita brilhos grandes atrás do texto
@@ -174,7 +174,7 @@
           x: Math.random() * w, y: Math.pow(Math.random(), 1.25) * h * .92, // mais densas no alto
           r: z < .82 ? .35 + Math.random() * .5 : .8 + Math.random() * .7,
           a: .25 + Math.random() * .6, fase: Math.random() * 6.28, ritmo: .006 + Math.random() * .02,
-          quente: Math.random() < .55, prof: .2 + z * .8
+          quente: Math.random() < .35, prof: .2 + z * .8
         });
       }
       grandes = [];
@@ -209,7 +209,7 @@
         if (e.x < -2) e.x = w + 2;
         a = e.a * (.55 + .45 * Math.sin(e.fase));
         ctx.globalAlpha = a;
-        ctx.fillStyle = e.quente ? "#f3d9a4" : "#fff7e8";
+        ctx.fillStyle = e.quente ? "#E6D2A6" : "#F5F0E7";
         var sx = e.x + px * e.prof, sy = e.y + py * e.prof;
         if (e.r < .8) ctx.fillRect(sx, sy, e.r * 2, e.r * 2);
         else { ctx.beginPath(); ctx.arc(sx, sy, e.r, 0, 6.283); ctx.fill(); }
