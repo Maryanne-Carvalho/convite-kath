@@ -48,7 +48,6 @@
   });
   var botaoMapa = $("#botao-mapa");
   if (botaoMapa) botaoMapa.href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(ENDERECO);
-  if (!COMPLEMENTO) { var avisoEnd = $("#aviso-endereco"); if (avisoEnd) avisoEnd.hidden = false; }
 
   /* ---------- Foto opcional do churrasco ---------- */
   var imgChurrasco = String(CFG.imagemChurrasco || "").trim();

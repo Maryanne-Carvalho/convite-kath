@@ -354,9 +354,17 @@ main:focus { outline: none; }
     linear-gradient(0deg, var(--noite) 0%, rgba(8, 9, 12, .82) 14%, rgba(8, 9, 12, 0) 46%);
 }
 .banner__texto { position: relative; z-index: 2; margin-top: -92px; padding: 0 var(--lateral); max-width: 640px; }
-.banner__rotulo { color: var(--ouro-vivo); margin-bottom: 6px; }
+.banner__titulo { margin: 0 0 14px; font-weight: 400; }
+/* "Aniversário da" em itálico dourado, apoiando o nome logo abaixo */
+.banner__pre {
+  display: flex; align-items: center; gap: 12px; margin: 0 0 4px;
+  font-family: var(--acento); font-style: italic; font-weight: 400;
+  font-size: clamp(1.45rem, 6.4vw, 2.1rem); line-height: 1.1; letter-spacing: .01em;
+  color: var(--ouro);
+}
+.banner__pre i { display: block; width: 28px; height: 1px; flex: none; background: linear-gradient(90deg, rgba(216, 188, 130, 0), var(--ouro)); }
 .banner__nome {
-  margin: 0 0 14px;
+  display: block; margin: 0;
   font-family: var(--display); font-weight: 400;
   font-size: clamp(3.3rem, 19vw, 6.6rem); line-height: .95; letter-spacing: -.01em;
   background: var(--gradiente-letra); -webkit-background-clip: text; background-clip: text; color: transparent;
@@ -396,6 +404,7 @@ main:focus { outline: none; }
   }
   .banner__texto { margin: 0; padding: 80px 32px 120px var(--lateral); width: 53%; max-width: 700px; }
   .banner__nome { font-size: clamp(5rem, 7.6vw, 7.6rem); }
+  .banner__pre { font-size: clamp(1.9rem, 2.4vw, 2.5rem); }
   .banner__mensagem { font-size: 1.12rem; }
   .banner__mensagem em { font-size: 1.7rem; }
   .banner__acoes .botao { flex: 0 1 auto; }
@@ -527,7 +536,6 @@ main:focus { outline: none; }
 .ingresso__acoes { display: grid; gap: 10px; grid-template-columns: 1fr; }
 @media (min-width: 520px) { .ingresso__acoes { grid-template-columns: 1fr 1fr; } }
 .ingresso__acoes .botao { width: 100%; }
-.ingresso__aviso { margin: 14px 0 0; font-size: .86rem; color: var(--claro-mudo); }
 
 .menu-calendario { position: relative; }
 .menu-calendario__opcoes {
